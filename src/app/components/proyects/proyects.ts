@@ -3,7 +3,7 @@ import { Component } from '@angular/core';
 interface Project {
   id: number;
   title: string;
-  category: 'fullstack' | 'frontend' | 'backend' | 'multiplataforma';
+  category: 'fullstack' | 'frontend' | 'backend' | 'mobile';
   description: string;
   image: string;
   tags: string[];
@@ -22,88 +22,106 @@ export class Proyects {
   projects: Project[] = [
     {
       id: 1,
-      title: 'Spring Backend',
-      category: 'backend',
+      title: 'Electro Home',
+      category: 'fullstack',
       description:
-        'API Rest, Backend con Spring Boot, Spring JPA y Spring Security. Implementación de autenticación JWT y arquitectura de microservicios.',
-      image:
-        'https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80',
-      tags: ['Java', 'Spring Boot', 'JPA', 'MySQL'],
-      demoLink: '#',
-      codeLink: '#',
+        'Sistema completo de e-commerce con gestión de productos, pagos, facturación electrónica, inventario y reclamos. Backend en .NET y frontend en React con TypeScript.',
+      image: 'https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80',
+      tags: ['.NET', 'React', 'TypeScript', 'SQL Server', 'API REST'],
     },
     {
       id: 2,
-      title: 'E-commerce React',
-      category: 'frontend',
+      title: 'Dux Messaging',
+      category: 'fullstack',
       description:
-        'Interfaz de usuario moderna para plataforma de comercio electrónico con carrito de compras, filtros y sistema de pagos integrado.',
-      image:
-        'https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80',
-      tags: ['React', 'Redux', 'CSS3', 'API REST'],
-      demoLink: '#',
-      codeLink: '#',
+        'Aplicación de mensajería en tiempo real con chats privados y grupales utilizando SignalR, autenticación y gestión de usuarios.',
+      image: 'https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80',
+      tags: ['.NET', 'React', 'SignalR', 'WebSockets', 'Auth'],
     },
     {
       id: 3,
-      title: 'Plataforma Educativa',
-      category: 'fullstack',
+      title: 'Banco Aneupi',
+      category: 'frontend',
       description:
-        'Sistema completo de gestión de cursos online con panel de administración, foros de discusión y sistema de evaluaciones automatizadas.',
-      image:
-        'https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80',
-      tags: ['MongoDB', 'Express', 'React', 'Node.js'],
-      demoLink: '#',
-      codeLink: '#',
+        'Frontend moderno desarrollado con Next.js para sistema financiero con múltiples módulos: créditos, accionistas, pagos y gestión de usuarios.',
+      image: 'https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80',
+      tags: ['Next.js', 'React', 'TypeScript', 'UI/UX'],
     },
     {
       id: 4,
-      title: 'App Móvil Multiplataforma',
-      category: 'multiplataforma',
+      title: 'Lista de Tareas',
+      category: 'backend',
       description:
-        'Aplicación móvil desarrollada con React Native para iOS y Android con sincronización en tiempo real.',
-      image:
-        'https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80',
-      tags: ['React Native', 'Firebase', 'JavaScript', 'Redux'],
-      demoLink: '#',
-      codeLink: '#',
+        'Aplicación de escritorio en Java para gestión de tareas con arquitectura modular, manejo de estados y UI personalizada.',
+      image: 'https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80',
+      tags: ['Java', 'POO', 'Swing', 'Arquitectura'],
     },
+    {
+      id: 5,
+      title: 'Recaudación Impuestos Vehículos',
+      category: 'backend',
+      description:
+        'Sistema en C# para gestión y recaudación de impuestos vehiculares con conexión a base de datos y lógica de validación.',
+      image: 'https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80',
+      tags: ['C#', '.NET', 'SQL', 'Backend'],
+    },
+    {
+      id: 6,
+      title: 'Vocales App',
+      category: 'mobile',
+      description:
+        'Aplicación Android educativa para aprendizaje de vocales con interacción visual, ejercicios y base de datos local.',
+      image: 'https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80',
+      tags: ['Android', 'Java', 'SQLite', 'UI'],
+    },
+    {
+      id: 7,
+      title: 'Move Photos & Videos',
+      category: 'backend',
+      description:
+        'Script en Python para organizar automáticamente archivos multimedia según fechas y tipos, optimizando almacenamiento.',
+      image: 'https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80',
+      tags: ['Python', 'Automatización', 'Scripts'],
+    },
+    {
+      id: 8,
+      title: 'Iterador Nombre Imágenes',
+      category: 'backend',
+      description:
+        'Script en Python para renombrar imágenes de forma masiva con patrones personalizados y fechas.',
+      image: 'https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80',
+      tags: ['Python', 'Automatización', 'Batch'],
+    }
   ];
 
-  filteredProjects = this.projects;
+  filteredProjects = [...this.projects];
 
-  filterProjects(category: string): void {
+  filterProjects(category: string) {
     this.activeFilter = category;
-
-    if (category === 'todos') {
-      this.filteredProjects = this.projects;
-    } else {
-      this.filteredProjects = this.projects.filter((project) =>
-        category === 'fullstack'
-          ? project.category === 'fullstack'
-          : category === 'frontend'
-          ? project.category === 'frontend'
-          : category === 'backend'
-          ? project.category === 'backend'
-          : project.category === 'multiplataforma'
-      );
-    }
+    this.filteredProjects =
+      category === 'todos'
+        ? [...this.projects]
+        : this.projects.filter((p) => p.category === category);
   }
 
   getCategoryDisplayName(category: string): string {
-    const names: { [key: string]: string } = {
-      todos: 'Todos',
-      fullstack: 'Full Stack',
-      frontend: 'Front End',
-      backend: 'Back End',
-      multiplataforma: 'Multiplataforma',
-    };
-    return names[category] || category;
+    switch (category) {
+      case 'todos':
+        return 'Todos';
+      case 'fullstack':
+        return 'Full Stack';
+      case 'frontend':
+        return 'Front End';
+      case 'backend':
+        return 'Back End';
+      case 'mobile':
+        return 'Mobile';
+      default:
+        return category;
+    }
   }
 
-  openExplanation(project: Project): void {
-    // Aquí puedes implementar la lógica para abrir un modal o video
-    alert(`Próximamente: Explicación detallada del proyecto "${project.title}"`);
-    // En el futuro, esto puede abrir un modal con un video explicativo
+  openExplanation(project: Project) {
+    alert(`Explicación del proyecto: ${project.title}`);
   }
 }
