@@ -26,7 +26,7 @@ export class Proyects {
       category: 'fullstack',
       description:
         'Sistema completo de e-commerce con gestión de productos, pagos, facturación electrónica, inventario y reclamos. Backend en .NET y frontend en React con TypeScript.',
-      image: 'https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80',
+      image: 'images/Screenshot (18).png',
       tags: ['.NET', 'React', 'TypeScript', 'SQL Server', 'API REST'],
     },
     {
@@ -35,7 +35,7 @@ export class Proyects {
       category: 'fullstack',
       description:
         'Aplicación de mensajería en tiempo real con chats privados y grupales utilizando SignalR, autenticación y gestión de usuarios.',
-      image: 'https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80',
+      image: 'images/Screenshot (19).png',
       tags: ['.NET', 'React', 'SignalR', 'WebSockets', 'Auth'],
     },
     {
@@ -44,7 +44,7 @@ export class Proyects {
       category: 'frontend',
       description:
         'Frontend moderno desarrollado con Next.js para sistema financiero con múltiples módulos: créditos, accionistas, pagos y gestión de usuarios.',
-      image: 'https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80',
+      image: 'images/Screenshot (20).png',
       tags: ['Next.js', 'React', 'TypeScript', 'UI/UX'],
     },
     {
@@ -53,7 +53,7 @@ export class Proyects {
       category: 'backend',
       description:
         'Aplicación de escritorio en Java para gestión de tareas con arquitectura modular, manejo de estados y UI personalizada.',
-      image: 'https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80',
+      image: 'images/Screenshot (23).png',
       tags: ['Java', 'POO', 'Swing', 'Arquitectura'],
     },
     {
@@ -62,7 +62,7 @@ export class Proyects {
       category: 'backend',
       description:
         'Sistema en C# para gestión y recaudación de impuestos vehiculares con conexión a base de datos y lógica de validación.',
-      image: 'https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80',
+      image: 'images/Screenshot (25).png',
       tags: ['C#', '.NET', 'SQL', 'Backend'],
     },
     {
@@ -71,7 +71,7 @@ export class Proyects {
       category: 'mobile',
       description:
         'Aplicación Android educativa para aprendizaje de vocales con interacción visual, ejercicios y base de datos local.',
-      image: 'https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80',
+      image: 'images/Screenshot (27).png',
       tags: ['Android', 'Java', 'SQLite', 'UI'],
     },
     {
@@ -80,7 +80,7 @@ export class Proyects {
       category: 'backend',
       description:
         'Script en Python para organizar automáticamente archivos multimedia según fechas y tipos, optimizando almacenamiento.',
-      image: 'https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80',
+      image: 'images/Screenshot (36).png',
       tags: ['Python', 'Automatización', 'Scripts'],
     },
     {
@@ -89,7 +89,7 @@ export class Proyects {
       category: 'backend',
       description:
         'Script en Python para renombrar imágenes de forma masiva con patrones personalizados y fechas.',
-      image: 'https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80',
+      image: 'images/Screenshot (39).png',
       tags: ['Python', 'Automatización', 'Batch'],
     }
   ];
