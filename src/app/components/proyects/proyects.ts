@@ -28,6 +28,8 @@ export class Proyects {
         'Sistema completo de e-commerce con gestión de productos, pagos, facturación electrónica, inventario y reclamos. Backend en .NET y frontend en React con TypeScript.',
       image: 'images/Screenshot (18).png',
       tags: ['.NET', 'React', 'TypeScript', 'SQL Server', 'API REST'],
+      demoLink: 'https://electro-home-lake.vercel.app/',
+      codeLink: 'https://github.com/Walter-Duchi/ElectroHome.git',
     },
     {
       id: 2,
@@ -37,6 +39,8 @@ export class Proyects {
         'Aplicación de mensajería en tiempo real con chats privados y grupales utilizando SignalR, autenticación y gestión de usuarios.',
       image: 'images/Screenshot (19).png',
       tags: ['.NET', 'React', 'SignalR', 'WebSockets', 'Auth'],
+      demoLink: 'https://dux-nine.vercel.app/login',
+      codeLink: 'https://github.com/Walter-Duchi/Dux-Messaging',
     },
     {
       id: 3,
@@ -46,6 +50,8 @@ export class Proyects {
         'Frontend moderno desarrollado con Next.js para sistema financiero con múltiples módulos: créditos, accionistas, pagos y gestión de usuarios.',
       image: 'images/Screenshot (20).png',
       tags: ['Next.js', 'React', 'TypeScript', 'UI/UX'],
+      demoLink: 'https://institucion-financiera-aneupi.vercel.app/',
+      codeLink: 'https://github.com/Walter-Duchi/frontend',
     },
     {
       id: 4,
@@ -55,6 +61,8 @@ export class Proyects {
         'Aplicación de escritorio en Java para gestión de tareas con arquitectura modular, manejo de estados y UI personalizada.',
       image: 'images/Screenshot (23).png',
       tags: ['Java', 'POO', 'Swing', 'Arquitectura'],
+      demoLink: 'https://github.com/Walter-Duchi/Lista-de-Tareas/releases/download/v1.0.0/ListaTareas.jar',
+      codeLink: 'https://github.com/Walter-Duchi/Lista-de-Tareas',
     },
     {
       id: 5,
@@ -64,6 +72,8 @@ export class Proyects {
         'Sistema en C# para gestión y recaudación de impuestos vehiculares con conexión a base de datos y lógica de validación.',
       image: 'images/Screenshot (25).png',
       tags: ['C#', '.NET', 'SQL', 'Backend'],
+      demoLink: 'https://github.com/Walter-Duchi/RecaudacionImpuestosVehiculos/releases/download/v1.0.0/RecaudacionImpuestosVehiculos.exe',
+      codeLink: 'https://github.com/Walter-Duchi/RecaudacionImpuestosVehiculos',
     },
     {
       id: 6,
@@ -73,6 +83,8 @@ export class Proyects {
         'Aplicación Android educativa para aprendizaje de vocales con interacción visual, ejercicios y base de datos local.',
       image: 'images/Screenshot (27).png',
       tags: ['Android', 'Java', 'SQLite', 'UI'],
+      demoLink: 'https://github.com/Walter-Duchi/Preescolar-Digital/releases/download/v1.0.0/PreescolarDigital.apk',
+      codeLink: 'https://github.com/Walter-Duchi/Preescolar-Digital',
     },
     {
       id: 7,
@@ -82,6 +94,8 @@ export class Proyects {
         'Script en Python para organizar automáticamente archivos multimedia según fechas y tipos, optimizando almacenamiento.',
       image: 'images/Screenshot (36).png',
       tags: ['Python', 'Automatización', 'Scripts'],
+      demoLink: 'https://github.com/Walter-Duchi/Move-Photos-Videos/releases/download/v1.0.0/MovePhotosVideos.py',
+      codeLink: 'https://github.com/Walter-Duchi/Move-Photos-Videos',
     },
     {
       id: 8,
@@ -91,6 +105,8 @@ export class Proyects {
         'Script en Python para renombrar imágenes de forma masiva con patrones personalizados y fechas.',
       image: 'images/Screenshot (39).png',
       tags: ['Python', 'Automatización', 'Batch'],
+      demoLink: 'https://github.com/Walter-Duchi/Iterador-Nombre-Imagenes/releases/download/v1.0.0/iteradorNombreImagenes.py',
+      codeLink: 'https://github.com/Walter-Duchi/Iterador-Nombre-Imagenes',
     }
   ];
 
