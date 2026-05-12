@@ -49,11 +49,11 @@ export class Navbar implements OnInit {
 
   private setActiveLinkOnScroll(): void {
     const sections = document.querySelectorAll('section[id]');
-    const navLinks = this.el.nativeElement.querySelectorAll('.nav-links a');
+    const navLinks: NodeListOf<HTMLAnchorElement> = this.el.nativeElement.querySelectorAll('.nav-links a');
     window.addEventListener('scroll', () => {
       let current = '';
       sections.forEach(section => {
-        const sectionTop = (section as HTMLElement).offsetTop - 100;
+        const sectionTop = (section as HTMLElement).offsetTop - 120;
         const sectionHeight = (section as HTMLElement).offsetHeight;
         if (window.scrollY >= sectionTop && window.scrollY < sectionTop + sectionHeight) {
           current = section.getAttribute('id') || '';

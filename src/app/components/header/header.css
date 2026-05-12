@@ -1,10 +1,9 @@
-/* === HEADER SUPER MEJORADO === */
 .header-profile {
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
-  padding: 2rem 0;
+  padding: 2rem 0 1rem;
   margin: 0 auto;
   max-width: 800px;
   gap: 1.5rem;
@@ -13,27 +12,46 @@
 .profile-container {
   position: relative;
   margin-bottom: 1rem;
+  width: 12rem;
+  height: 12rem;
+}
+
+.profile-ring {
+  position: absolute;
+  top: -8px;
+  left: -8px;
+  width: calc(100% + 16px);
+  height: calc(100% + 16px);
+  border-radius: 50%;
+  background: conic-gradient(from 0deg, #2563eb, #10b981, #2563eb);
+  animation: spinRing 4s linear infinite;
+  z-index: 0;
+}
+
+@keyframes spinRing {
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 .photo-profile {
-  height: 11rem;
-  width: 11rem;
+  position: relative;
+  z-index: 1;
+  height: 100%;
+  width: 100%;
   border-radius: 50%;
   object-fit: cover;
-  border: 3px solid transparent;
-  background: var(--gradient-primary);
-  background-clip: padding-box;
-  box-shadow: 0 10px 30px var(--text-accent-glow);
-  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  border: 4px solid var(--bg-primary);
+  box-shadow: 0 0 30px var(--text-accent-glow);
+  transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
 .photo-profile:hover {
-  transform: scale(1.03) rotate(2deg);
-  box-shadow: 0 20px 40px var(--text-accent-glow);
+  transform: scale(1.05);
 }
 
 .name {
-  font-size: 2.8rem;
+  font-size: 3rem;
   font-weight: 800;
   background: var(--gradient-primary);
   background-clip: text;
@@ -43,16 +61,9 @@
   letter-spacing: -0.02em;
 }
 
-.description {
-  font-size: 1.3rem;
-  color: var(--text-secondary);
-  max-width: 600px;
-  line-height: 1.6;
-  font-weight: 500;
-}
-
-.typing {
+.typing-container {
   font-size: 1.4rem;
+  margin-top: 0.5rem;
 }
 
 .typed-text {
@@ -65,7 +76,7 @@
   width: 3px;
   background-color: var(--text-accent);
   margin-left: 4px;
-  animation: blink 0.7s infinite;
+  animation: blink 0.8s infinite;
 }
 
 @keyframes blink {
@@ -97,15 +108,29 @@
 .disponibilidad:hover {
   background-color: rgba(16, 185, 129, 0.2);
   transform: translateY(-2px);
-  box-shadow: 0 6px 14px rgba(16, 185, 129, 0.2);
+  box-shadow: 0 6px 20px rgba(16, 185, 129, 0.3);
 }
 
 .punto-verde {
-  width: 12px;
-  height: 12px;
+  width: 13px;
+  height: 13px;
   background-color: var(--text-success);
   border-radius: 50%;
   animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7);
+  }
+
+  70% {
+    box-shadow: 0 0 0 10px rgba(16, 185, 129, 0);
+  }
+
+  100% {
+    box-shadow: 0 0 0 0 rgba(16, 185, 129, 0);
+  }
 }
 
 .apps-profile {
@@ -128,6 +153,7 @@
   justify-content: center;
   fill: var(--text-primary);
   box-shadow: var(--shadow-sm);
+  cursor: pointer;
 }
 
 [data-theme='light'] .icon-app {
@@ -139,25 +165,24 @@
 }
 
 .icon-app:hover {
-  transform: translateY(-5px) scale(1.1);
-  background-color: var(--bg-secondary);
-  box-shadow: var(--shadow-md);
-  fill: var(--text-accent);
+  transform: translateY(-5px) scale(1.15);
+  background: var(--gradient-primary);
+  fill: white;
+  box-shadow: 0 15px 25px var(--text-accent-glow);
 }
 
 @media (max-width: 768px) {
   .name {
-    font-size: 2rem;
+    font-size: 2.2rem;
   }
 
-  .description,
-  .typing {
+  .typing-container {
     font-size: 1.1rem;
   }
 
-  .photo-profile {
-    height: 8rem;
-    width: 8rem;
+  .profile-container {
+    width: 9rem;
+    height: 9rem;
   }
 
   .icon-app {
@@ -168,12 +193,7 @@
 
 @media (max-width: 480px) {
   .name {
-    font-size: 1.7rem;
-  }
-
-  .description,
-  .typing {
-    font-size: 1rem;
+    font-size: 1.8rem;
   }
 
   .disponibilidad {

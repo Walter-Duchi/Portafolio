@@ -1,4 +1,3 @@
-/* === HABILIDADES MEJORADO === */
 #habilidades {
   background-color: var(--bg-primary);
 }
@@ -14,15 +13,15 @@
 .skills-section {
   background: var(--bg-card);
   border-radius: 28px;
-  padding: 2rem;
+  padding: 2.5rem;
   box-shadow: var(--shadow-md);
   border: 1px solid var(--border-color);
   transition: all 0.3s;
 }
 
 .skills-section:hover {
-  transform: translateY(-4px);
-  box-shadow: var(--shadow-lg);
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-xl);
 }
 
 .tags-container {
@@ -34,20 +33,44 @@
 
 .tag {
   background: var(--gradient-primary);
-  padding: 0.6rem 1.4rem;
+  padding: 0.65rem 1.5rem;
   border-radius: 60px;
-  font-size: 0.9rem;
+  font-size: 0.95rem;
   font-weight: 600;
   letter-spacing: 0.3px;
+  transition: all 0.3s;
+  box-shadow: 0 4px 10px var(--text-accent-glow);
+  position: relative;
+  overflow: hidden;
+}
+
+.tag::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  transition: left 0.6s ease;
+}
+
+.tag:hover::before {
+  left: 100%;
+}
+
+.tag:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 10px 20px var(--text-accent-glow);
 }
 
 @media (max-width: 768px) {
   .skills-section {
-    padding: 1.5rem;
+    padding: 1.8rem;
   }
 
   .tag {
     padding: 0.5rem 1.2rem;
-    font-size: 0.8rem;
+    font-size: 0.85rem;
   }
 }
