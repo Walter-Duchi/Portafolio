@@ -1,7 +1,5 @@
 #certificados {
-  background: linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
-  border-top: 2px solid var(--border-color);
-  border-bottom: 2px solid var(--border-color);
+  background-color: transparent;
 }
 
 .certificates-grid {
@@ -17,14 +15,18 @@
   border-radius: 24px;
   height: 280px;
   box-shadow: var(--shadow-md);
-  border: 1px solid var(--border-color);
+  border: 1px solid rgba(255, 255, 255, 0.2);
   transition: all 0.4s ease;
   transform-style: preserve-3d;
+  background: rgba(var(--bg-primary-rgb), 0.5);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
 }
 
 .certificate-card:hover {
-  transform: translateY(-10px) rotateY(3deg) rotateX(3deg);
-  box-shadow: 0 30px 50px -15px var(--text-accent-glow);
+  transform: translateY(-14px) rotateY(5deg) rotateX(5deg);
+  box-shadow: 0 35px 60px -15px var(--text-accent-glow);
+  border-color: var(--text-accent);
 }
 
 .certificate-card img {
@@ -37,7 +39,7 @@
 }
 
 .certificate-card:hover img {
-  transform: scale(1.1);
+  transform: scale(1.12);
 }
 
 .certificate-overlay {
@@ -47,7 +49,8 @@
   width: 100%;
   height: 100%;
   background: var(--bg-primary-transparente);
-  backdrop-filter: blur(16px);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
   opacity: 0;
   transition: opacity 0.4s ease;
   display: flex;
@@ -108,7 +111,7 @@
 
 .certificate-btn:hover {
   transform: translateY(-3px);
-  box-shadow: 0 10px 20px var(--text-accent-glow);
+  box-shadow: 0 12px 24px var(--text-accent-glow);
 }
 
 @media (max-width: 768px) {

@@ -1,5 +1,5 @@
 #proyectos {
-  background-color: var(--bg-secondary);
+  background-color: transparent;
 }
 
 .proyect-nav {
@@ -21,6 +21,8 @@
   font-size: 0.95rem;
   cursor: pointer;
   letter-spacing: 0.5px;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
 }
 
 .proyect-nav a:hover {
@@ -44,19 +46,25 @@
 }
 
 .proyect-card {
-  background: var(--bg-card);
+  background: rgba(var(--bg-primary-rgb), 0.7);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
   border-radius: 28px;
   overflow: hidden;
   box-shadow: var(--shadow-md);
   transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   display: flex;
-  border: 1px solid var(--border-color);
+  border: 1px solid rgba(255, 255, 255, 0.2);
   position: relative;
 }
 
+[data-theme='dark'] .proyect-card {
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
 .proyect-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 30px 50px -15px var(--text-accent-glow);
+  transform: translateY(-12px) scale(1.01);
+  box-shadow: 0 30px 60px -15px var(--text-accent-glow);
   border-color: var(--text-accent);
 }
 
@@ -75,7 +83,7 @@
 }
 
 .proyect-card:hover img {
-  transform: scale(1.07);
+  transform: scale(1.08);
 }
 
 .image-overlay {
@@ -84,7 +92,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(135deg, rgba(37, 99, 235, 0.2), transparent);
+  background: linear-gradient(135deg, rgba(99, 102, 241, 0.3), transparent);
   opacity: 0;
   transition: opacity 0.3s;
 }
@@ -141,6 +149,8 @@
   font-weight: 600;
   border: 1px solid var(--border-color);
   transition: all 0.3s;
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
 }
 
 .btn-proyectos:hover {
@@ -159,13 +169,13 @@
 }
 
 .proyect-tags span {
-  background: rgba(59, 130, 246, 0.1);
+  background: rgba(99, 102, 241, 0.15);
   color: var(--text-accent);
   padding: 0.35rem 1rem;
   border-radius: 30px;
   font-size: 0.8rem;
   font-weight: 600;
-  border: 1px solid rgba(59, 130, 246, 0.2);
+  border: 1px solid rgba(99, 102, 241, 0.3);
   transition: all 0.3s;
 }
 

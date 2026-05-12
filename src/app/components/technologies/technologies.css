@@ -1,5 +1,5 @@
 #tecnologias {
-  background: linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
+  background-color: transparent;
 }
 
 .tecnologias-grid-container {
@@ -9,18 +9,21 @@
 }
 
 .categoria {
-  background: var(--bg-card);
+  background: rgba(var(--bg-primary-rgb), 0.6);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
   border-radius: 28px;
   padding: 2.5rem;
   box-shadow: var(--shadow-md);
-  border: 1px solid var(--border-color);
+  border: 1px solid rgba(255, 255, 255, 0.25);
   transition: all 0.3s ease;
   perspective: 800px;
 }
 
 .categoria:hover {
-  transform: translateY(-6px);
+  transform: translateY(-8px);
   box-shadow: var(--shadow-xl);
+  border-color: var(--text-accent);
 }
 
 .tecnologia-titulo {
@@ -45,12 +48,14 @@
 }
 
 .tecnologia-item {
-  background: var(--bg-primary);
+  background: rgba(var(--bg-primary-rgb), 0.5);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   border-radius: 20px;
   padding: 1.5rem 1rem;
   text-align: center;
   transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  border: 1px solid var(--border-color);
+  border: 1px solid rgba(255, 255, 255, 0.15);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -68,7 +73,7 @@
   left: -100%;
   width: 100%;
   height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(59, 130, 246, 0.1), transparent);
+  background: linear-gradient(90deg, transparent, rgba(99, 102, 241, 0.2), transparent);
   transition: left 0.5s ease;
 }
 
@@ -77,10 +82,10 @@
 }
 
 .tecnologia-item:hover {
-  transform: translateY(-8px) rotateY(5deg) rotateX(5deg);
-  box-shadow: 0 20px 30px -10px var(--text-accent-glow);
+  transform: translateY(-10px) rotateY(8deg) rotateX(5deg);
+  box-shadow: 0 25px 35px -10px var(--text-accent-glow);
   border-color: var(--text-accent);
-  background: var(--bg-card);
+  background: rgba(var(--bg-primary-rgb), 0.8);
 }
 
 .tecnologia-item img {
@@ -93,8 +98,8 @@
 }
 
 .tecnologia-item:hover img {
-  filter: drop-shadow(0 6px 12px var(--text-accent-glow));
-  transform: scale(1.1);
+  filter: drop-shadow(0 8px 12px var(--text-accent-glow));
+  transform: scale(1.15);
 }
 
 .tecnologia-item p {

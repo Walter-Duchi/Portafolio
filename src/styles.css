@@ -6,14 +6,16 @@
 :root {
   /* Paleta de colores profesional - Tema claro (PREDETERMINADO) */
   --bg-primary: #ffffff;
+  --bg-primary-rgb: 255, 255, 255;
   --bg-primary-transparente: rgba(255, 255, 255, 0.85);
   --bg-secondary: #f8f9fa;
+  --bg-secondary-rgb: 248, 249, 250;
   --bg-card: #ffffff;
   --text-primary: #1a1a1a;
   --text-secondary: #666666;
-  --text-accent: #2563eb;
-  --text-accent-glow: rgba(37, 99, 235, 0.4);
-  --text-success: #059669;
+  --text-accent: #6366f1;
+  --text-accent-glow: rgba(99, 102, 241, 0.4);
+  --text-success: #10b981;
   --border-color: #e0e0e0;
   --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.05);
   --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.08);
@@ -24,16 +26,16 @@
   --glass-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.07);
 
   /* Gradientes */
-  --gradient-primary: linear-gradient(135deg, #2563eb 0%, #1e40af 100%);
+  --gradient-primary: linear-gradient(135deg, #6366f1 0%, #06b6d4 100%);
   --gradient-dark: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
-  --gradient-success: linear-gradient(135deg, #059669 0%, #047857 100%);
+  --gradient-success: linear-gradient(135deg, #10b981 0%, #047857 100%);
 
   /* Colores para botones y estados */
-  --button-primary: #2563eb;
-  --button-primary-hover: #1d4ed8;
+  --button-primary: #6366f1;
+  --button-primary-hover: #4f46e5;
   --button-secondary: #e5e7eb;
   --button-secondary-hover: #d1d5db;
-  --tag-bg: #2563eb;
+  --tag-bg: #6366f1;
   --tag-text: #ffffff;
   --button-proyectos: #e2e8f0;
   --button-proyectos-hover: #cbd5e1;
@@ -47,14 +49,16 @@
   --button-proyectos-hover: #475569;
 
   --bg-primary: #0a0a0a;
+  --bg-primary-rgb: 10, 10, 10;
   --bg-primary-transparente: rgba(0, 0, 0, 0.85);
   --bg-secondary: #111827;
+  --bg-secondary-rgb: 17, 24, 39;
   --bg-card: #1a1a2e;
   --text-primary: #f9fafb;
   --text-secondary: #9ca3af;
-  --text-accent: #3b82f6;
-  --text-accent-glow: rgba(59, 130, 246, 0.3);
-  --text-success: #10b981;
+  --text-accent: #818cf8;
+  --text-accent-glow: rgba(129, 140, 248, 0.3);
+  --text-success: #34d399;
   --border-color: #2d3748;
   --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.3);
   --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.4);
@@ -63,14 +67,14 @@
   --navbar-bg: rgba(10, 10, 10, 0.85);
   --glass-border: 1px solid rgba(255, 255, 255, 0.05);
   --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
-  --gradient-primary: linear-gradient(135deg, #3b82f6 0%, #1e3a8a 100%);
+  --gradient-primary: linear-gradient(135deg, #818cf8 0%, #22d3ee 100%);
   --gradient-dark: linear-gradient(135deg, #111827 0%, #030712 100%);
-  --gradient-success: linear-gradient(135deg, #10b981 0%, #047857 100%);
-  --button-primary: #3b82f6;
-  --button-primary-hover: #2563eb;
+  --gradient-success: linear-gradient(135deg, #34d399 0%, #047857 100%);
+  --button-primary: #818cf8;
+  --button-primary-hover: #6366f1;
   --button-secondary: #374151;
   --button-secondary-hover: #4b5563;
-  --tag-bg: #3b82f6;
+  --tag-bg: #818cf8;
   --tag-text: #ffffff;
 }
 
@@ -93,6 +97,61 @@ body {
   font-size: 16px;
   transition: background-color 0.4s ease, color 0.4s ease;
   overflow-x: hidden;
+}
+
+/* === FONDO ANIMADO CON ORBES === */
+.bg-animation {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.bg-animation::before,
+.bg-animation::after {
+  content: '';
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(100px);
+  opacity: 0.5;
+  will-change: transform;
+}
+
+.bg-animation::before {
+  width: 800px;
+  height: 800px;
+  background: radial-gradient(circle, var(--text-accent), transparent 70%);
+  animation: floatOrb1 25s infinite alternate ease-in-out;
+}
+
+.bg-animation::after {
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, #10b981, transparent 70%);
+  animation: floatOrb2 30s infinite alternate ease-in-out;
+}
+
+@keyframes floatOrb1 {
+  0% {
+    transform: translate(-20%, -20%) scale(1);
+  }
+
+  100% {
+    transform: translate(40%, 30%) scale(1.2);
+  }
+}
+
+@keyframes floatOrb2 {
+  0% {
+    transform: translate(30%, 40%) scale(0.9);
+  }
+
+  100% {
+    transform: translate(-25%, -25%) scale(1.15);
+  }
 }
 
 /* === TODOS LOS ENLACES SIN SUBRAYADO === */
@@ -131,15 +190,28 @@ a:active {
   width: 100%;
   margin: 0 auto;
   padding: 0 2rem;
+  position: relative;
+  z-index: 1;
 }
 
-/* === SECCIONES CON DIFERENCIACIÓN VISUAL MEJORADA === */
+/* === SECCIONES CON EFECTO GLASS === */
 section {
   display: flex;
   flex-direction: column;
   padding: 5rem 0;
   position: relative;
   overflow: hidden;
+  background: rgba(var(--bg-primary-rgb), 0.7);
+  backdrop-filter: blur(25px);
+  -webkit-backdrop-filter: blur(25px);
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: inset 0 0 10px rgba(255, 255, 255, 0.1);
+}
+
+[data-theme='dark'] section {
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 .section-content {
@@ -148,6 +220,7 @@ section {
   margin: 0 auto;
   padding: 0 2rem;
   z-index: 2;
+  position: relative;
 }
 
 /* Fondo animado para la sección inicio */
@@ -159,7 +232,7 @@ section {
   width: 200%;
   height: 200%;
   background: radial-gradient(circle at 30% 50%, var(--text-accent-glow) 0%, transparent 30%),
-    radial-gradient(circle at 70% 20%, rgba(59, 130, 246, 0.15) 0%, transparent 35%),
+    radial-gradient(circle at 70% 20%, rgba(99, 102, 241, 0.15) 0%, transparent 35%),
     radial-gradient(circle at 40% 80%, rgba(16, 185, 129, 0.15) 0%, transparent 40%);
   animation: rotateBackground 25s linear infinite;
   opacity: 0.6;
@@ -181,31 +254,14 @@ section {
   }
 }
 
-#proyectos {
-  background-color: var(--bg-primary);
-  border-top: 1px solid var(--border-color);
-  border-bottom: 1px solid var(--border-color);
-}
-
-#tecnologias {
-  background: linear-gradient(135deg, var(--bg-secondary) 0%, var(--bg-primary) 100%);
-  position: relative;
-}
-
-#habilidades {
-  background-color: var(--bg-primary);
-  border-top: 1px solid var(--border-color);
-}
-
-#certificados {
-  background: linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
-  border-bottom: 1px solid var(--border-color);
-}
-
 #contacto {
-  background: var(--gradient-dark);
+  background: linear-gradient(135deg, rgba(30, 41, 59, 0.9) 0%, rgba(15, 23, 42, 0.9) 100%);
+  backdrop-filter: blur(25px);
+  -webkit-backdrop-filter: blur(25px);
   color: white;
   position: relative;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: none;
 }
 
 #contacto::after {
@@ -393,6 +449,8 @@ h2 {
   text-align: center;
   font-size: 0.9rem;
   color: var(--text-secondary);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
 }
 
 /* === MODAL PARA EXPLICACIÓN DE PROYECTOS === */
@@ -403,7 +461,7 @@ h2 {
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.8);
-  backdrop-filter: blur(8px);
+  backdrop-filter: blur(15px);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -428,6 +486,8 @@ h2 {
   border: 1px solid var(--border-color);
   transform: scale(0.9) translateY(20px);
   transition: transform 0.3s ease;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
 }
 
 .modal-overlay.active .modal-container {
