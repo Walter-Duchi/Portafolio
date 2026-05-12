@@ -1,5 +1,5 @@
 #tecnologias {
-  background-color: transparent;
+  background: transparent;
 }
 
 .tecnologias-grid-container {
@@ -15,13 +15,12 @@
   border-radius: 28px;
   padding: 2.5rem;
   box-shadow: var(--shadow-md);
-  border: 1px solid rgba(255, 255, 255, 0.25);
+  border: 1px solid rgba(255,255,255,0.25);
   transition: all 0.3s ease;
-  perspective: 800px;
 }
 
 .categoria:hover {
-  transform: translateY(-8px);
+  transform: translateY(-6px);
   box-shadow: var(--shadow-xl);
   border-color: var(--text-accent);
 }
@@ -43,7 +42,7 @@
 
 .tecnologias-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
   gap: 1.5rem;
 }
 
@@ -55,13 +54,12 @@
   padding: 1.5rem 1rem;
   text-align: center;
   transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  border: 1px solid rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255,255,255,0.15);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 125px;
-  transform-style: preserve-3d;
+  height: 120px;
   position: relative;
   overflow: hidden;
 }
@@ -69,11 +67,9 @@
 .tecnologia-item::before {
   content: '';
   position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(99, 102, 241, 0.2), transparent);
+  top: 0; left: -100%;
+  width: 100%; height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(79, 70, 229, 0.15), transparent);
   transition: left 0.5s ease;
 }
 
@@ -82,18 +78,18 @@
 }
 
 .tecnologia-item:hover {
-  transform: translateY(-10px) rotateY(8deg) rotateX(5deg);
-  box-shadow: 0 25px 35px -10px var(--text-accent-glow);
+  transform: translateY(-8px) rotateY(4deg) rotateX(2deg);
+  box-shadow: 0 20px 30px -10px var(--text-accent-glow);
   border-color: var(--text-accent);
   background: rgba(var(--bg-primary-rgb), 0.8);
 }
 
 .tecnologia-item img {
-  width: 48px;
-  height: 48px;
+  width: 44px;
+  height: 44px;
   margin-bottom: 0.75rem;
   object-fit: contain;
-  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
   transition: all 0.3s;
 }
 
@@ -103,7 +99,7 @@
 }
 
 .tecnologia-item p {
-  font-size: 0.9rem;
+  font-size: 0.85rem;
   font-weight: 600;
   color: var(--text-secondary);
 }
@@ -118,17 +114,14 @@
   .categoria {
     padding: 2rem;
   }
-
   .tecnologias-grid {
     grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
     gap: 1rem;
   }
-
   .tecnologia-item {
     height: 110px;
     padding: 1rem;
   }
-
   .tecnologia-item img {
     width: 36px;
     height: 36px;
