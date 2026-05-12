@@ -16,6 +16,7 @@
         <div class="proyect-card">
             <div class="proyect-image">
                 <img title="{{ project.title }}" [src]="project.image" [alt]="project.title" />
+                <div class="image-overlay"></div>
             </div>
             <div class="proyect-info">
                 <div>
@@ -25,9 +26,12 @@
                 </div>
                 <div>
                     <div class="proyect-links">
-                        <a class="btn btn-proyectos" [href]="project.demoLink || '#'" target="_blank">Ver proyecto</a>
-                        <a class="btn btn-proyectos" [href]="project.codeLink || '#'" target="_blank">Código fuente</a>
-                        <button class="btn btn-proyectos" (click)="openExplanation(project)">Ver explicación</button>
+                        <a class="btn btn-proyectos" [href]="project.demoLink || '#'" target="_blank">Ver
+                            proyecto</a>
+                        <a class="btn btn-proyectos" [href]="project.codeLink || '#'" target="_blank">Código
+                            fuente</a>
+                        <button class="btn btn-proyectos" (click)="openExplanation(project)">Ver
+                            explicación</button>
                     </div>
                     <div class="proyect-tags">
                         @for (tag of project.tags; track tag) {

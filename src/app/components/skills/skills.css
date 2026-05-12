@@ -1,4 +1,4 @@
-/* === HABILIDADES === */
+/* === HABILIDADES MEJORADO === */
 #habilidades {
   background-color: var(--bg-primary);
 }
@@ -13,44 +13,41 @@
 
 .skills-section {
   background: var(--bg-card);
-  border-radius: 12px;
-  padding: 1rem;
-  box-shadow: 0 4px 20px var(--shadow);
+  border-radius: 28px;
+  padding: 2rem;
+  box-shadow: var(--shadow-md);
   border: 1px solid var(--border-color);
+  transition: all 0.3s;
+}
+
+.skills-section:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
 }
 
 .tags-container {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.75rem;
+  gap: 0.9rem;
   justify-content: center;
 }
 
-@media (max-width: 768px) {
-  .skills-section {
-    padding: 2rem;
-  }
-
-  .tags-container {
-    gap: 0.5rem;
-  }
-
-  #habilidades {
-    padding: 2.5rem 0 !important;
-  }
+.tag {
+  background: var(--gradient-primary);
+  padding: 0.6rem 1.4rem;
+  border-radius: 60px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 0.3px;
 }
 
-@media (max-width: 480px) {
+@media (max-width: 768px) {
   .skills-section {
     padding: 1.5rem;
   }
 
   .tag {
-    padding: 0.4rem 0.9rem;
-    font-size: 0.85rem;
-  }
-
-  #habilidades {
-    padding: 2rem 0 !important;
+    padding: 0.5rem 1.2rem;
+    font-size: 0.8rem;
   }
 }

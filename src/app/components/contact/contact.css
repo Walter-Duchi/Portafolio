@@ -1,13 +1,16 @@
 /* === CONTACTO MEJORADO === */
 #contacto {
-  background: linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
-  border-top: 2px solid var(--border-color);
+  background: var(--gradient-dark);
+  border-top: none;
   text-align: center;
+  position: relative;
 }
 
 .contact-content {
-  max-width: 600px; /* Un poco más ancho para los botones en fila */
+  max-width: 650px;
   margin: 0 auto;
+  position: relative;
+  z-index: 2;
 }
 
 .contact-info {
@@ -15,129 +18,107 @@
 }
 
 .contact-text {
-  font-size: 1.1rem;
-  color: var(--text-primary);
+  font-size: 1.2rem;
+  color: rgba(255, 255, 255, 0.9);
   margin-bottom: 0.5rem;
-  line-height: 1.6;
+  font-weight: 500;
 }
 
 .contact-subtext {
   font-size: 0.95rem;
-  color: var(--text-secondary);
-  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.7);
 }
 
 .contact-buttons {
   display: flex;
-  flex-direction: row; /* Siempre en fila para desktop */
-  gap: 1rem;
+  flex-direction: row;
+  gap: 1.2rem;
   justify-content: center;
-  flex-wrap: wrap; /* Para que se adapten en pantallas pequeñas */
+  flex-wrap: wrap;
 }
 
 .contact-button {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 0.5rem; /* Un poco menos de gap para fila */
-  padding: 0.75rem 1.5rem; /* Padding ajustado para fila */
-  border-radius: 8px;
-  font-weight: 600;
-  font-size: 0.95rem; /* Un poco más pequeño para fila */
-  transition: all 0.3s ease;
-  border: 2px solid transparent;
+  gap: 0.6rem;
+  padding: 0.85rem 1.8rem;
+  border-radius: 60px;
+  font-weight: 700;
+  font-size: 1rem;
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  border: none;
   text-decoration: none;
   color: white;
-  white-space: nowrap; /* Evita que el texto se rompa */
-  flex: 1; /* Para que se expandan igual */
-  min-width: 140px; /* Ancho mínimo consistente */
+  position: relative;
+  overflow: hidden;
+  backdrop-filter: blur(4px);
+}
+
+.contact-button::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: width 0.5s, height 0.5s;
+}
+
+.contact-button:active::after {
+  width: 200%;
+  height: 200%;
 }
 
 .contact-button.email {
-  background-color: var(--button-primary);
-  border-color: var(--button-primary);
+  background: linear-gradient(135deg, #2563eb, #1e40af);
 }
 
 .contact-button.email:hover {
-  background-color: var(--button-primary-hover);
-  border-color: var(--button-primary-hover);
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(59, 130, 246, 0.3);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(37, 99, 235, 0.4);
 }
 
 .contact-button.whatsapp {
-  background-color: hsl(142, 70%, 40%);
-  border-color: hsl(142, 70%, 40%);
+  background: linear-gradient(135deg, #25d366, #128c7e);
 }
 
 .contact-button.whatsapp:hover {
-  background-color: #128c7e;
-  border-color: #128c7e;
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(37, 211, 102, 0.3);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(37, 211, 102, 0.4);
 }
 
 .contact-button.linkedin {
-  background-color: #0077b5;
-  border-color: #0077b5;
+  background: linear-gradient(135deg, #0077b5, #005885);
 }
 
 .contact-button.linkedin:hover {
-  background-color: #005885;
-  border-color: #005885;
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(0, 119, 181, 0.3);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0, 119, 181, 0.4);
 }
 
-/* Estados de enfoque para accesibilidad */
-.contact-button:focus-visible {
-  outline: 2px solid var(--text-primary);
-  outline-offset: 2px;
-}
-
-/* === RESPONSIVE PARA CONTACTO === */
 @media (max-width: 768px) {
   .contact-buttons {
-    flex-direction: row; /* Mantener en fila para tablets */
-    gap: 0.75rem;
+    gap: 1rem;
   }
 
   .contact-button {
-    padding: 0.875rem 1rem;
+    padding: 0.7rem 1.5rem;
     font-size: 0.9rem;
-    min-width: 120px;
   }
 }
 
 @media (max-width: 600px) {
   .contact-buttons {
-    flex-direction: column; /* Cambiar a columna solo en móviles muy pequeños */
-    gap: 0.875rem;
+    flex-direction: column;
+    align-items: center;
   }
 
   .contact-button {
-    width: 100%;
-    max-width: 250px;
-    margin: 0 auto;
-  }
-}
-
-@media (max-width: 480px) {
-  .contact-text {
-    font-size: 1rem;
-  }
-
-  .contact-subtext {
-    font-size: 0.9rem;
-  }
-
-  .contact-button {
-    padding: 0.75rem 1.25rem;
-    font-size: 0.9rem;
-  }
-
-  .contact-button svg {
-    width: 18px;
-    height: 18px;
+    width: 80%;
+    max-width: 260px;
   }
 }

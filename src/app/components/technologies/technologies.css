@@ -1,4 +1,4 @@
-/* === TECNOLOGÍAS === */
+/* === TECNOLOGÍAS MEJORADO === */
 #tecnologias {
   background-color: var(--bg-secondary);
 }
@@ -11,10 +11,16 @@
 
 .categoria {
   background: var(--bg-card);
-  border-radius: 12px;
+  border-radius: 24px;
   padding: 2.5rem;
-  box-shadow: 0 4px 20px var(--shadow);
+  box-shadow: var(--shadow-md);
   border: 1px solid var(--border-color);
+  transition: all 0.3s ease;
+}
+
+.categoria:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
 }
 
 .tecnologia-titulo {
@@ -25,8 +31,11 @@
 
 .tecnologia-titulo h3 {
   font-size: 1.5rem;
-  font-weight: 600;
-  color: var(--text-primary);
+  font-weight: 700;
+  background: var(--gradient-primary);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
 }
 
 .tecnologias-grid {
@@ -37,10 +46,10 @@
 
 .tecnologia-item {
   background: var(--bg-primary);
-  border-radius: 8px;
+  border-radius: 16px;
   padding: 1.5rem 1rem;
   text-align: center;
-  transition: all 0.3s ease;
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   border: 1px solid var(--border-color);
   display: flex;
   flex-direction: column;
@@ -50,22 +59,28 @@
 }
 
 .tecnologia-item:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 6px 20px var(--shadow);
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 10px 20px var(--shadow);
   border-color: var(--text-accent);
+  background: var(--bg-card);
 }
 
 .tecnologia-item img {
-  width: 40px;
-  height: 40px;
+  width: 44px;
+  height: 44px;
   margin-bottom: 0.75rem;
   object-fit: contain;
-  filter: brightness(0.9);
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+  transition: filter 0.3s;
+}
+
+.tecnologia-item:hover img {
+  filter: drop-shadow(0 4px 8px var(--text-accent-glow));
 }
 
 .tecnologia-item p {
   font-size: 0.9rem;
-  font-weight: 500;
+  font-weight: 600;
   color: var(--text-secondary);
 }
 
@@ -86,31 +101,12 @@
   }
 
   .tecnologia-item {
-    height: 110px;
-    padding: 1.25rem 0.75rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .categoria {
-    padding: 1.5rem;
-  }
-
-  .tecnologias-grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
-
-  .tecnologia-item {
-    height: 100px;
-    padding: 1rem 0.5rem;
+    height: 105px;
+    padding: 1rem;
   }
 
   .tecnologia-item img {
-    width: 32px;
-    height: 32px;
-  }
-
-  .tecnologia-item p {
-    font-size: 0.8rem;
+    width: 36px;
+    height: 36px;
   }
 }

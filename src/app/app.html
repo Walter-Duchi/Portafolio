@@ -2,39 +2,57 @@
     <app-navbar></app-navbar>
     <main>
         <section id="inicio">
-            <div class="section-content">
+            <div class="section-content reveal">
                 <app-header></app-header>
             </div>
         </section>
 
         <section id="proyectos">
-            <div class="section-content">
+            <div class="section-content reveal">
                 <app-proyects></app-proyects>
             </div>
         </section>
 
         <section id="tecnologias">
-            <div class="section-content">
+            <div class="section-content reveal">
                 <app-technologies></app-technologies>
             </div>
         </section>
 
         <section id="habilidades">
-            <div class="section-content">
+            <div class="section-content reveal">
                 <app-skills></app-skills>
             </div>
         </section>
 
         <section id="certificados">
-            <div class="section-content">
+            <div class="section-content reveal">
                 <app-certificates></app-certificates>
             </div>
         </section>
 
         <section id="contacto">
-            <div class="section-content">
+            <div class="section-content reveal">
                 <app-contact></app-contact>
             </div>
         </section>
     </main>
+    <footer class="footer">
+        <p>© 2025 Walter Duchi — Programador Full Stack. Todos los derechos reservados.</p>
+    </footer>
+</div>
+
+<div class="scroll-top" id="scrollTopBtn">
+    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M12 4L12 20M12 4L18 10M12 4L6 10" stroke="white" stroke-width="2" stroke-linecap="round"
+            stroke-linejoin="round" />
+    </svg>
+</div>
+
+<div class="modal-overlay" id="projectModal">
+    <div class="modal-container">
+        <h3 id="modalTitle"></h3>
+        <p id="modalDesc"></p>
+        <button class="modal-close" id="modalCloseBtn">Cerrar</button>
+    </div>
 </div>

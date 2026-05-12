@@ -1,15 +1,21 @@
-/* === NAVBAR === */
+/* === NAVBAR MEJORADA - SIN SUBRAYADO === */
 .navbar {
-  background-color: var(--navbar-bg);
-  -webkit-backdrop-filter: blur(20px);
-  backdrop-filter: blur(20px);
+  background-color: transparent;
   width: 100%;
   position: fixed;
   top: 0;
   right: 0;
   z-index: 1000;
-  box-shadow: 0 1px 20px var(--shadow);
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  padding: 0.5rem 0;
+}
+
+.navbar.scrolled {
+  background-color: var(--navbar-bg);
+  backdrop-filter: blur(20px);
+  box-shadow: 0 4px 20px var(--shadow);
   border-bottom: 1px solid var(--border-color);
+  padding: 0;
 }
 
 .nav-container {
@@ -23,15 +29,18 @@
 }
 
 .logo-container .logo {
-  font-size: 1.5rem;
-  font-weight: 700;
-  color: var(--text-primary);
-  transition: color 0.3s ease;
-  z-index: 1001;
+  font-size: 1.6rem;
+  font-weight: 800;
+  background: var(--gradient-primary);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  transition: transform 0.3s ease;
+  display: inline-block;
 }
 
 .logo-container .logo:hover {
-  color: var(--text-accent);
+  transform: scale(1.02);
 }
 
 .nav-right {
@@ -51,31 +60,16 @@
 
 .nav-links a {
   color: var(--text-primary);
-  font-weight: 500;
+  font-weight: 600;
   transition: all 0.3s ease;
-  position: relative;
   padding: 0.5rem 0;
   font-size: 0.95rem;
   white-space: nowrap;
+  text-decoration: none;
 }
 
 .nav-links a:hover {
   color: var(--text-accent);
-}
-
-.nav-links a::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 0;
-  height: 2px;
-  background: var(--text-accent);
-  transition: width 0.3s ease;
-}
-
-.nav-links a:hover::after {
-  width: 100%;
 }
 
 .nav-actions {
@@ -87,22 +81,23 @@
 .theme-toggle {
   background: var(--bg-card);
   border: 1px solid var(--border-color);
-  border-radius: 8px;
+  border-radius: 50%;
   width: 44px;
   height: 44px;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   transition: all 0.3s ease;
   color: var(--text-primary);
+  box-shadow: var(--shadow-sm);
 }
 
 .theme-toggle:hover {
+  transform: translateY(-2px) rotate(8deg);
   background-color: var(--bg-secondary);
-  transform: translateY(-1px);
-  box-shadow: 0 2px 8px var(--shadow);
+  box-shadow: var(--shadow-md);
 }
 
 .menu-toggle {
@@ -128,7 +123,6 @@
   transform-origin: center;
 }
 
-/* === RESPONSIVE - MENÚ HAMBURGUESA === */
 @media (max-width: 768px) {
   .nav-container {
     padding: 0 1rem;
@@ -145,7 +139,6 @@
     width: 100%;
     height: calc(100vh - 70px);
     background-color: var(--navbar-bg);
-    -webkit-backdrop-filter: blur(20px);
     backdrop-filter: blur(20px);
     flex-direction: column;
     justify-content: flex-start;
@@ -162,15 +155,10 @@
   }
 
   .nav-links a {
-    font-size: 1.1rem;
-    padding: 1rem 2rem;
+    font-size: 1.2rem;
+    padding: 0.75rem 1.5rem;
   }
 
-  .nav-links a::after {
-    display: none;
-  }
-
-  /* Animación del menú hamburguesa */
   .menu-toggle.active span:nth-child(1) {
     transform: rotate(45deg) translate(6px, 6px);
   }
