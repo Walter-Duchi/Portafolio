@@ -3,7 +3,7 @@ import { Component } from '@angular/core';
 interface Project {
   id: number;
   title: string;
-  category: 'fullstack' | 'frontend' | 'backend' | 'mobile';
+  category: 'fullstack' | 'backend' | 'mobile';
   description: string;
   image: string;
   tags: string[];
@@ -45,17 +45,6 @@ export class Proyects {
     },
     {
       id: 3,
-      title: 'Banco Aneupi',
-      category: 'frontend',
-      description: 'Frontend moderno desarrollado con Next.js para sistema financiero con múltiples módulos: créditos, accionistas, pagos y gestión de usuarios.',
-      image: 'images/Screenshot (20).png',
-      tags: ['Next.js', 'React', 'TypeScript', 'UI/UX'],
-      demoLink: 'https://institucion-financiera-aneupi.vercel.app/',
-      codeLink: 'https://github.com/Walter-Duchi/frontend',
-      explanation: 'UI/UX profesional, gráficos interactivos con Chart.js, formularios dinámicos y responsive design.'
-    },
-    {
-      id: 4,
       title: 'Lista de Tareas',
       category: 'backend',
       description: 'Aplicación de escritorio en Java para gestión de tareas con arquitectura modular, manejo de estados y UI personalizada.',
@@ -66,7 +55,7 @@ export class Proyects {
       explanation: 'Aplicación con patrones de diseño, persistencia en archivos y manejo de excepciones.'
     },
     {
-      id: 5,
+      id: 4,
       title: 'Recaudación Impuestos Vehículos',
       category: 'backend',
       description: 'Sistema en C# para gestión y recaudación de impuestos vehiculares con conexión a base de datos y lógica de validación.',
@@ -77,7 +66,7 @@ export class Proyects {
       explanation: 'Incluye cálculos automáticos, generación de reportes y conexión segura a SQL Server.'
     },
     {
-      id: 6,
+      id: 5,
       title: 'Vocales App',
       category: 'mobile',
       description: 'Aplicación Android educativa para aprendizaje de vocales con interacción visual, ejercicios y base de datos local.',
@@ -88,7 +77,7 @@ export class Proyects {
       explanation: 'Diseño adaptado para niños, actividades interactivas y almacenamiento de progreso.'
     },
     {
-      id: 7,
+      id: 6,
       title: 'Move Photos & Videos',
       category: 'backend',
       description: 'Script en Python para organizar automáticamente archivos multimedia según fechas y tipos, optimizando almacenamiento.',
@@ -99,7 +88,7 @@ export class Proyects {
       explanation: 'Script con manejo de metadatos, detección de fechas y organización por carpetas.'
     },
     {
-      id: 8,
+      id: 7,
       title: 'Iterador Nombre Imágenes',
       category: 'backend',
       description: 'Script en Python para renombrar imágenes de forma masiva con patrones personalizados y fechas.',
@@ -122,7 +111,6 @@ export class Proyects {
     switch (category) {
       case 'todos': return 'Todos';
       case 'fullstack': return 'Full Stack';
-      case 'frontend': return 'Front End';
       case 'backend': return 'Back End';
       case 'mobile': return 'Mobile';
       default: return category;

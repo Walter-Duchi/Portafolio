@@ -3,7 +3,7 @@
     <p class="section-description">Una selección de mis trabajos más recientes y representativos</p>
 
     <nav class="proyect-nav">
-        @for (category of ['todos', 'fullstack', 'frontend', 'backend', 'mobile']; track category) {
+        @for (category of ['todos', 'fullstack', 'backend', 'mobile']; track category) {
         <a href="#" [class.active]="activeFilter === category"
             (click)="filterProjects(category); $event.preventDefault()">
             {{ getCategoryDisplayName(category) }}
