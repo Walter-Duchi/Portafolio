@@ -445,19 +445,18 @@ h2 {
 }
 
 .modal-close {
-  background: var(--gradient-primary);
-  color: white;
+  background: transparent;
   border: none;
-  padding: 0.75rem 1.5rem;
-  border-radius: 40px;
-  font-weight: 600;
+  font-size: 2rem;
+  color: var(--text-primary);
   cursor: pointer;
-  transition: all 0.3s ease;
+  line-height: 1;
+  padding: 0 0.5rem;
+  transition: color 0.2s;
 }
 
 .modal-close:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px var(--text-accent-glow);
+  color: var(--text-accent);
 }
 
 @media (max-width: 1024px) {
@@ -512,19 +511,94 @@ h2 {
   width: 90%;
   max-height: 90vh;
   overflow: hidden;
-  padding: 2rem;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  border-radius: 28px;
+}
+
+.modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.5rem 2rem 0.5rem;
+  flex-shrink: 0;
+}
+
+.modal-header h3 {
+  margin: 0;
+  font-size: 1.6rem;
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  display: inline-block;
+}
+
+.modal-header-buttons {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.modal-close {
+  background: transparent;
+  border: none;
+  font-size: 2rem;
+  color: var(--text-primary);
+  cursor: pointer;
+  line-height: 1;
+  padding: 0 0.5rem;
+  transition: color 0.2s;
+}
+
+.modal-close:hover {
+  color: var(--text-accent);
+}
+
+#modalContenido {
+  flex: 1;
+  overflow: auto;
+  padding: 0 2rem 2rem;
 }
 
 #visorIframe {
   width: 100%;
-  height: 70vh;
+  min-height: 60vh;
   border: none;
   border-radius: 12px;
 }
 
-.modal-botones {
-  display: flex;
-  justify-content: flex-end;
-  gap: 1rem;
-  margin-top: 1.5rem;
+#modalDescargarBtn {
+  display: inline-flex;
+}
+
+@media (max-width: 768px) {
+  .visor-container {
+    max-width: 95%;
+    width: 95%;
+  }
+  .modal-header {
+    padding: 1rem 1rem 0.5rem;
+  }
+  .modal-header h3 {
+    font-size: 1.3rem;
+  }
+  #visorIframe {
+    min-height: 50vh;
+  }
+  #modalContenido {
+    padding: 0 1rem 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .modal-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+  .modal-header-buttons {
+    align-self: flex-end;
+  }
 }

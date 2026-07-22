@@ -29,11 +29,16 @@
                         <a class="btn btn-proyectos" [href]="project.demoLink || '#'" target="_blank">Ver
                             proyecto</a>
                         @if (project.category === 'fullstack' && project.codeLinkFrontend && project.codeLinkBackend) {
-                            <a class="btn btn-proyectos" [href]="project.codeLinkFrontend" target="_blank">Código Frontend</a>
-                            <a class="btn btn-proyectos" [href]="project.codeLinkBackend" target="_blank">Código Backend</a>
+                            <div class="dropdown">
+                                <input type="checkbox" [id]="'code-dropdown-' + project.id" class="dropdown-toggle">
+                                <label [attr.for]="'code-dropdown-' + project.id" class="btn btn-proyectos dropdown-btn">Código ▼</label>
+                                <div class="dropdown-menu">
+                                    <a [href]="project.codeLinkFrontend" target="_blank">Frontend</a>
+                                    <a [href]="project.codeLinkBackend" target="_blank">Backend</a>
+                                </div>
+                            </div>
                         } @else {
-                            <a class="btn btn-proyectos" [href]="project.codeLink || '#'" target="_blank">Código
-                                fuente</a>
+                            <a class="btn btn-proyectos" [href]="project.codeLink || '#'" target="_blank">Código fuente</a>
                         }
                         <button class="btn btn-proyectos" (click)="openExplanation(project)">Ver
                             explicación</button>
