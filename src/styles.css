@@ -503,3 +503,28 @@ h2 {
     font-size: 0.85rem;
   }
 }
+
+
+/* ----------------------------- */
+/* Estilos del modal visor (vídeos y PDF) */
+.visor-container {
+  max-width: 90%;
+  width: 90%;
+  max-height: 90vh;
+  overflow: hidden;
+  padding: 2rem;
+}
+
+#visorIframe {
+  width: 100%;
+  height: 70vh;
+  border: none;
+  border-radius: 12px;
+}
+
+.modal-botones {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}

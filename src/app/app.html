@@ -50,10 +50,15 @@
     </svg>
 </div>
 
-<div class="modal-overlay" id="projectModal">
-    <div class="modal-container">
-        <h3 id="modalTitle"></h3>
-        <p id="modalDesc"></p>
-        <button class="modal-close" id="modalCloseBtn">Cerrar</button>
+<div class="modal-overlay" id="visorModal">
+    <div class="modal-container visor-container">
+        <h3 id="modalTitulo"></h3>
+        <div id="modalContenido">
+            <iframe id="visorIframe" src="" frameborder="0" allowfullscreen></iframe>
+        </div>
+        <div class="modal-botones">
+            <a id="modalDescargarBtn" class="btn btn-primary" style="display:none;" download>Descargar</a>
+            <button class="modal-close" id="modalCerrarBtn">Cerrar</button>
+        </div>
     </div>
 </div>

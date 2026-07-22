@@ -28,8 +28,13 @@
                     <div class="proyect-links">
                         <a class="btn btn-proyectos" [href]="project.demoLink || '#'" target="_blank">Ver
                             proyecto</a>
-                        <a class="btn btn-proyectos" [href]="project.codeLink || '#'" target="_blank">Código
-                            fuente</a>
+                        @if (project.category === 'fullstack' && project.codeLinkFrontend && project.codeLinkBackend) {
+                            <a class="btn btn-proyectos" [href]="project.codeLinkFrontend" target="_blank">Código Frontend</a>
+                            <a class="btn btn-proyectos" [href]="project.codeLinkBackend" target="_blank">Código Backend</a>
+                        } @else {
+                            <a class="btn btn-proyectos" [href]="project.codeLink || '#'" target="_blank">Código
+                                fuente</a>
+                        }
                         <button class="btn btn-proyectos" (click)="openExplanation(project)">Ver
                             explicación</button>
                     </div>

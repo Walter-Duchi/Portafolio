@@ -41,15 +41,19 @@ export class App implements OnInit {
       window.scrollTo({ top: 0, behavior: 'smooth' });
     });
 
-    // Modal close logic
-    const modal = document.getElementById('projectModal');
-    const closeBtn = document.getElementById('modalCloseBtn');
+    // Modal visor (vídeos y certificados)
+    const visorModal = document.getElementById('visorModal');
+    const closeBtn = document.getElementById('modalCerrarBtn');
     closeBtn?.addEventListener('click', () => {
-      modal?.classList.remove('active');
+      visorModal?.classList.remove('active');
+      const iframe = document.getElementById('visorIframe') as HTMLIFrameElement;
+      if (iframe) iframe.src = '';
     });
-    modal?.addEventListener('click', (e) => {
-      if (e.target === modal) {
-        modal.classList.remove('active');
+    visorModal?.addEventListener('click', (e) => {
+      if (e.target === visorModal) {
+        visorModal.classList.remove('active');
+        const iframe = document.getElementById('visorIframe') as HTMLIFrameElement;
+        if (iframe) iframe.src = '';
       }
     });
   }

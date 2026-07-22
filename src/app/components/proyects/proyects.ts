@@ -10,6 +10,10 @@ interface Project {
   demoLink?: string;
   codeLink?: string;
   explanation?: string;
+
+  codeLinkFrontend?: string;
+  codeLinkBackend?: string;
+  videoId?: string;
 }
 
 @Component({
@@ -29,7 +33,10 @@ export class Proyects {
       image: 'images/Screenshot (18).png',
       tags: ['.NET', 'React', 'TypeScript', 'SQL Server', 'API REST'],
       demoLink: 'https://electro-home-lake.vercel.app/',
-      codeLink: 'https://github.com/Walter-Duchi/ElectroHome.git',
+      codeLink: '',
+      codeLinkFrontend: 'https://github.com/Walter-Duchi/ElectroHome-Frontend',
+      codeLinkBackend: 'https://github.com/Walter-Duchi/ElectroHome-Backend',
+      videoId: 'N3TzUA2BkDY',
       explanation: 'Este proyecto integra pasarela de pagos, autenticación JWT, panel de administración y facturación electrónica. Desarrollado con arquitectura limpia y buenas prácticas.'
     },
     {
@@ -40,7 +47,10 @@ export class Proyects {
       image: 'images/Screenshot (19).png',
       tags: ['.NET', 'React', 'SignalR', 'WebSockets', 'Auth'],
       demoLink: 'https://dux-nine.vercel.app/login',
-      codeLink: 'https://github.com/Walter-Duchi/Dux-Messaging',
+      codeLink: '',
+      codeLinkFrontend: 'https://github.com/Walter-Duchi/Dux-Frontend',
+      codeLinkBackend: 'https://github.com/Walter-Duchi/Dux-Backend',
+      videoId: 'gQwQWplRWQY',
       explanation: 'Implementación completa de SignalR para mensajería instantánea, notificaciones en tiempo real y almacenamiento de conversaciones.'
     },
     {
@@ -52,6 +62,7 @@ export class Proyects {
       tags: ['Java', 'POO', 'Swing', 'Arquitectura'],
       demoLink: 'https://github.com/Walter-Duchi/Lista-de-Tareas/releases/download/v1.0.0/ListaTareas.jar',
       codeLink: 'https://github.com/Walter-Duchi/Lista-de-Tareas',
+      videoId: 'YYPTllP_CvY',
       explanation: 'Aplicación con patrones de diseño, persistencia en archivos y manejo de excepciones.'
     },
     {
@@ -61,8 +72,9 @@ export class Proyects {
       description: 'Sistema en C# para gestión y recaudación de impuestos vehiculares con conexión a base de datos y lógica de validación.',
       image: 'images/Screenshot (25).png',
       tags: ['C#', '.NET', 'SQL', 'Backend'],
-      demoLink: 'https://github.com/Walter-Duchi/RecaudacionImpuestosVehiculos/releases/download/v1.0.0/RecaudacionImpuestosVehiculos.exe',
-      codeLink: 'https://github.com/Walter-Duchi/RecaudacionImpuestosVehiculos',
+      demoLink: 'https://github.com/Walter-Duchi/Recaudacion-Impuestos-Vehiculares/releases/download/v1.0.0/RecaudacionImpuestosVehiculos.exe',
+      codeLink: 'https://github.com/Walter-Duchi/Recaudacion-Impuestos-Vehiculares',
+      videoId: 'PKmrrVr6wlw',
       explanation: 'Incluye cálculos automáticos, generación de reportes y conexión segura a SQL Server.'
     },
     {
@@ -74,6 +86,7 @@ export class Proyects {
       tags: ['Android', 'Java', 'SQLite', 'UI'],
       demoLink: 'https://github.com/Walter-Duchi/Preescolar-Digital/releases/download/v1.0.0/PreescolarDigital.apk',
       codeLink: 'https://github.com/Walter-Duchi/Preescolar-Digital',
+      videoId: 'oaCFtG-vEeg',
       explanation: 'Diseño adaptado para niños, actividades interactivas y almacenamiento de progreso.'
     },
     {
@@ -85,6 +98,7 @@ export class Proyects {
       tags: ['Python', 'Automatización', 'Scripts'],
       demoLink: 'https://github.com/Walter-Duchi/Move-Photos-Videos/releases/download/v1.0.0/MovePhotosVideos.py',
       codeLink: 'https://github.com/Walter-Duchi/Move-Photos-Videos',
+      videoId: 'aoW7GGX_JT0',
       explanation: 'Script con manejo de metadatos, detección de fechas y organización por carpetas.'
     },
     {
@@ -96,6 +110,7 @@ export class Proyects {
       tags: ['Python', 'Automatización', 'Batch'],
       demoLink: 'https://github.com/Walter-Duchi/Iterador-Nombre-Imagenes/releases/download/v1.0.0/iteradorNombreImagenes.py',
       codeLink: 'https://github.com/Walter-Duchi/Iterador-Nombre-Imagenes',
+      videoId: 'flfneFJYcAw',
       explanation: 'Renombrado batch con expresiones regulares y soporte para múltiples formatos.'
     }
   ];
@@ -118,12 +133,14 @@ export class Proyects {
   }
 
   openExplanation(project: Project) {
-    const modal = document.getElementById('projectModal');
-    const titleEl = document.getElementById('modalTitle');
-    const descEl = document.getElementById('modalDesc');
-    if (modal && titleEl && descEl) {
-      titleEl.textContent = project.title;
-      descEl.textContent = project.explanation || 'Próximamente más detalles sobre este proyecto.';
+    const modal = document.getElementById('visorModal');
+    const iframe = document.getElementById('visorIframe') as HTMLIFrameElement;
+    const titulo = document.getElementById('modalTitulo');
+    const descargarBtn = document.getElementById('modalDescargarBtn');
+    if (modal && iframe && titulo && descargarBtn) {
+      titulo.textContent = project.title;
+      iframe.src = `https://www.youtube.com/embed/${project.videoId}?autoplay=1`;
+      descargarBtn.style.display = 'none';
       modal.classList.add('active');
     }
   }
