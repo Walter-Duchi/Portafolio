@@ -1,6 +1,4 @@
-#habilidades {
-  background: transparent;
-}
+#habilidades { background: transparent; }
 
 .skills-container {
   display: flex;
@@ -11,68 +9,53 @@
 }
 
 .skills-section {
-  background: rgba(var(--bg-primary-rgb), 0.6);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border-radius: 28px;
+  background: var(--bg-card);
+  backdrop-filter: blur(30px);
+  border-radius: var(--radius-lg);
   padding: 2.5rem;
-  box-shadow: var(--shadow-md);
-  border: 1px solid rgba(255,255,255,0.25);
+  border: 1px solid var(--border-color);
   transition: all 0.3s;
-}
-
-.skills-section:hover {
-  transform: translateY(-4px);
-  box-shadow: var(--shadow-xl);
-  border-color: var(--text-accent);
 }
 
 .tags-container {
   display: flex;
   flex-wrap: wrap;
-  gap: 1rem;
+  gap: 1.2rem;
   justify-content: center;
 }
 
 .tag {
   background: var(--gradient-primary);
   color: white;
-  padding: 0.7rem 1.6rem;
-  border-radius: 60px;
+  padding: 0.75rem 2rem;
+  border-radius: var(--radius-xl);
   font-size: 0.95rem;
   font-weight: 600;
-  letter-spacing: 0.3px;
-  transition: all 0.3s;
-  box-shadow: 0 4px 12px var(--text-accent-glow);
-  position: relative;
-  overflow: hidden;
-  border: 1px solid rgba(255,255,255,0.3);
+  letter-spacing: 0.5px;
+  box-shadow: 0 6px 15px var(--text-accent-glow);
+  transition: all 0.3s var(--transition-bounce);
+  animation: floatTag 3s infinite ease-in-out;
 }
 
-.tag::before {
-  content: '';
-  position: absolute;
-  top: 0; left: -100%;
-  width: 100%; height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
-  transition: left 0.6s ease;
+.tag:nth-child(odd) {
+  animation-delay: 0.2s;
 }
 
-.tag:hover::before {
-  left: 100%;
+.tag:nth-child(even) {
+  animation-delay: 0.5s;
+}
+
+@keyframes floatTag {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
 }
 
 .tag:hover {
-  transform: translateY(-4px) scale(1.07);
-  box-shadow: 0 12px 24px var(--text-accent-glow);
+  animation: none;
+  transform: translateY(-5px) scale(1.1);
+  box-shadow: 0 12px 28px var(--text-accent-glow);
 }
 
 @media (max-width: 768px) {
-  .skills-section {
-    padding: 1.8rem;
-  }
-  .tag {
-    padding: 0.5rem 1.2rem;
-    font-size: 0.85rem;
-  }
+  .tag { padding: 0.6rem 1.5rem; font-size: 0.85rem; }
 }

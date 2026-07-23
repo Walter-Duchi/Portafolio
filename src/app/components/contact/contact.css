@@ -1,17 +1,12 @@
 #contacto {
-  background: linear-gradient(135deg, rgba(15, 23, 42, 0.97) 0%, rgba(30, 41, 59, 0.97) 100%);
-  backdrop-filter: blur(25px);
-  -webkit-backdrop-filter: blur(25px);
-  border-top: 2px solid rgba(255,255,255,0.08);
+  background: linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
   text-align: center;
-  position: relative;
+  border-top: 1px solid var(--border-color);
 }
 
 .contact-content {
   max-width: 650px;
   margin: 0 auto;
-  position: relative;
-  z-index: 2;
 }
 
 .contact-info {
@@ -20,19 +15,12 @@
 
 .contact-text {
   font-size: 1.3rem;
-  color: rgba(255,255,255,0.95);
-  margin-bottom: 0.5rem;
+  color: var(--text-primary);
   font-weight: 500;
-}
-
-.contact-subtext {
-  font-size: 1rem;
-  color: rgba(255,255,255,0.7);
 }
 
 .contact-buttons {
   display: flex;
-  flex-direction: row;
   gap: 1.5rem;
   justify-content: center;
   flex-wrap: wrap;
@@ -41,21 +29,17 @@
 .contact-button {
   display: inline-flex;
   align-items: center;
-  justify-content: center;
   gap: 0.75rem;
-  padding: 0.9rem 2rem;
-  border-radius: 60px;
+  padding: 1rem 2.2rem;
+  border-radius: var(--radius-xl);
   font-weight: 700;
   font-size: 1.05rem;
-  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  border: none;
-  text-decoration: none;
   color: white;
+  transition: all 0.3s var(--transition-bounce);
+  border: none;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.15);
   position: relative;
   overflow: hidden;
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.25);
 }
 
 .contact-button::after {
@@ -70,25 +54,17 @@
 }
 
 .contact-button:active::after {
-  width: 300px;
-  height: 300px;
+  width: 400px;
+  height: 400px;
 }
 
-.contact-button.email {
-  background: linear-gradient(135deg, #4f46e5, #0d9488);
-}
-
-.contact-button.whatsapp {
-  background: linear-gradient(135deg, #25d366, #128c7e);
-}
-
-.contact-button.linkedin {
-  background: linear-gradient(135deg, #0077b5, #005885);
-}
+.contact-button.email { background: linear-gradient(135deg, #4f46e5, #0d9488); }
+.contact-button.whatsapp { background: linear-gradient(135deg, #25d366, #128c7e); }
+.contact-button.linkedin { background: linear-gradient(135deg, #0077b5, #005885); }
 
 .contact-button:hover {
   transform: translateY(-6px);
-  box-shadow: 0 18px 35px rgba(0,0,0,0.4), 0 0 0 3px var(--text-accent);
+  box-shadow: 0 18px 35px rgba(0,0,0,0.25), 0 0 20px var(--text-accent-glow);
 }
 
 .contact-button svg {
@@ -97,27 +73,9 @@
   transition: transform 0.3s;
 }
 
-.contact-button:hover svg {
-  transform: scale(1.2) rotate(8deg);
-}
-
-@media (max-width: 768px) {
-  .contact-buttons {
-    gap: 1rem;
-  }
-  .contact-button {
-    padding: 0.75rem 1.8rem;
-    font-size: 0.95rem;
-  }
-}
+.contact-button:hover svg { transform: scale(1.2) rotate(10deg); }
 
 @media (max-width: 600px) {
-  .contact-buttons {
-    flex-direction: column;
-    align-items: center;
-  }
-  .contact-button {
-    width: 85%;
-    max-width: 280px;
-  }
+  .contact-buttons { flex-direction: column; align-items: center; }
+  .contact-button { width: 85%; max-width: 280px; justify-content: center; }
 }
