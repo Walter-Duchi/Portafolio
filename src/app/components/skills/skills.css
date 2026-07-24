@@ -1,5 +1,4 @@
 #habilidades { background: transparent; }
-
 .skills-container {
   display: flex;
   flex-direction: column;
@@ -7,55 +6,48 @@
   max-width: 1000px;
   margin: 0 auto;
 }
-
 .skills-section {
   background: var(--bg-card);
   backdrop-filter: blur(30px);
   border-radius: var(--radius-lg);
-  padding: 2.5rem;
+  padding: 3rem 2.5rem;
   border: 1px solid var(--border-color);
   transition: all 0.3s;
 }
-
 .tags-container {
   display: flex;
   flex-wrap: wrap;
-  gap: 1.2rem;
+  gap: 1rem;
   justify-content: center;
 }
-
 .tag {
+  background: rgba(255,255,255,0.04);
+  color: var(--text-primary);
+  border: 1px solid var(--border-color);
+  padding: 0.7rem 1.8rem;
+  border-radius: 50px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  transition: all 0.3s var(--transition-bounce);
+  box-shadow: none;
+}
+.tag:hover {
   background: var(--gradient-primary);
   color: white;
-  padding: 0.75rem 2rem;
-  border-radius: var(--radius-xl);
-  font-size: 0.95rem;
-  font-weight: 600;
-  letter-spacing: 0.5px;
-  box-shadow: 0 6px 15px var(--text-accent-glow);
-  transition: all 0.3s var(--transition-bounce);
-  animation: floatTag 3s infinite ease-in-out;
+  border-color: transparent;
+  transform: translateY(-4px);
+  box-shadow: 0 10px 25px var(--text-accent-glow);
 }
-
-.tag:nth-child(odd) {
-  animation-delay: 0.2s;
+.tag {
+  animation: floatTag 5s infinite ease-in-out;
 }
-
-.tag:nth-child(even) {
-  animation-delay: 0.5s;
-}
-
+.tag:nth-child(odd) { animation-delay: 0s; }
+.tag:nth-child(even) { animation-delay: 0.3s; }
 @keyframes floatTag {
   0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-8px); }
+  50% { transform: translateY(-5px); }
 }
-
-.tag:hover {
-  animation: none;
-  transform: translateY(-5px) scale(1.1);
-  box-shadow: 0 12px 28px var(--text-accent-glow);
-}
-
+.tag:hover { animation: none; }
 @media (max-width: 768px) {
   .tag { padding: 0.6rem 1.5rem; font-size: 0.85rem; }
 }

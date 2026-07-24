@@ -4,7 +4,7 @@ import { Injectable, signal } from '@angular/core';
   providedIn: 'root',
 })
 export class ThemeService {
-  private currentTheme = signal<'dark' | 'light'>('light'); // Cambiado a 'light' por defecto
+  private currentTheme = signal<'dark' | 'light'>('dark'); // Cambiado a 'light' por defecto
 
   constructor() {
     this.loadTheme();
