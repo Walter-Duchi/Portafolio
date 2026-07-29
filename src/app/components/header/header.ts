@@ -53,4 +53,18 @@ export class Header implements AfterViewInit {
 
     type();
   }
+  abrirCV() {
+    const modal = document.getElementById('visorModal');
+    const iframe = document.getElementById('visorIframe') as HTMLIFrameElement;
+    const titulo = document.getElementById('modalTitulo');
+    const descargarBtn = document.getElementById('modalDescargarBtn') as HTMLAnchorElement;
+    if (modal && iframe && titulo && descargarBtn) {
+      titulo.textContent = 'Currículum Vitae';
+      iframe.src = 'pdf/Walter_Alejandro_Duchi_Rivera_CV.pdf';
+      descargarBtn.style.display = 'inline-flex';
+      descargarBtn.href = 'pdf/Walter_Alejandro_Duchi_Rivera_CV.pdf';
+      descargarBtn.setAttribute('download', '');
+      modal.classList.add('active');
+    }
+  }
 }
