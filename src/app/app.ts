@@ -25,7 +25,7 @@ export class App implements OnInit {
           entry.target.classList.add('active');
         }
       });
-    }, { threshold: 0, rootMargin: '100px' });
+    }, { threshold: 0.1, rootMargin: '0px 0px 300px 0px' });
     reveals.forEach(el => observer.observe(el));
 
     // Scroll to top button
