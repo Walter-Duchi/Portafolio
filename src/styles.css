@@ -307,7 +307,7 @@ h2::after {
 .reveal {
   opacity: 0;
   transform: translateY(40px);
-  transition: opacity 0.8s ease, transform 0.8s var(--transition-bounce);
+  transition: opacity 0.25s ease-out, transform 0.25s ease-out;
 }
 
 .reveal.active {
