@@ -6,10 +6,11 @@ import { Technologies } from './components/technologies/technologies';
 import { Skills } from './components/skills/skills';
 import { Certificates } from './components/certificates/certificates';
 import { Contact } from './components/contact/contact';
+import { Languages } from './components/languages/languages';
 
 @Component({
   selector: 'app-root',
-  imports: [Navbar, Header, Proyects, Technologies, Skills, Certificates, Contact],
+  imports: [Navbar, Header, Proyects, Technologies, Skills, Languages, Certificates, Contact],
   templateUrl: './app.html',
   styleUrl: './app.css',
 })
