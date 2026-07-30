@@ -3,7 +3,7 @@
     <p class="section-description">Una selección de mis trabajos más recientes y representativos</p>
 
     <nav class="proyect-nav">
-        @for (category of ['todos', 'fullstack', 'backend', 'mobile']; track category) {
+        @for (category of ['todos', 'web', 'escritorio', 'movil']; track category) {
         <a href="#" [class.active]="activeFilter === category"
             (click)="filterProjects(category); $event.preventDefault()">
             {{ getCategoryDisplayName(category) }}
@@ -28,7 +28,7 @@
                     <div class="proyect-links">
                         <a class="btn btn-proyectos" [href]="project.demoLink || '#'" target="_blank">Ver
                             proyecto</a>
-                        @if (project.category === 'fullstack' && project.codeLinkFrontend && project.codeLinkBackend) {
+                        @if (project.category === 'web' && project.codeLinkFrontend && project.codeLinkBackend) {
                             <div class="dropdown">
                                 <input type="checkbox" [id]="'code-dropdown-' + project.id" class="dropdown-toggle">
                                 <label [attr.for]="'code-dropdown-' + project.id" class="btn btn-proyectos dropdown-btn">Código ▼</label>
