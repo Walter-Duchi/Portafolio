@@ -13,6 +13,7 @@ interface Project {
   codeLinkFrontend?: string;
   codeLinkBackend?: string;
   videoId?: string;
+  demoLabel?: string;
 }
 
 @Component({
@@ -36,6 +37,7 @@ export class Proyects {
       codeLinkFrontend: 'https://github.com/Walter-Duchi/ElectroHome-Frontend',
       codeLinkBackend: 'https://github.com/Walter-Duchi/ElectroHome-Backend',
       videoId: 'N3TzUA2BkDY',
+      demoLabel: 'Visitar sitio',
       explanation: 'Este proyecto integra pasarela de pagos, autenticación JWT, panel de administración y facturación electrónica. Desarrollado con arquitectura limpia y buenas prácticas.'
     },
     {
@@ -50,6 +52,7 @@ export class Proyects {
       codeLinkFrontend: 'https://github.com/Walter-Duchi/Dux-Frontend',
       codeLinkBackend: 'https://github.com/Walter-Duchi/Dux-Backend',
       videoId: 'gQwQWplRWQY',
+      demoLabel: 'Visitar sitio',
       explanation: 'Implementación completa de SignalR para mensajería instantánea, notificaciones en tiempo real y almacenamiento de conversaciones.'
     },
     {
@@ -64,6 +67,7 @@ export class Proyects {
       codeLinkFrontend: undefined,
       codeLinkBackend: undefined,
       videoId: 'YYPTllP_CvY',
+      demoLabel: 'Descargar JAR',
       explanation: 'Aplicación con patrones de diseño, persistencia en archivos y manejo de excepciones.'
     },
     {
@@ -78,6 +82,7 @@ export class Proyects {
       codeLinkFrontend: undefined,
       codeLinkBackend: undefined,
       videoId: 'PKmrrVr6wlw',
+      demoLabel: 'Descargar ejecutable',
       explanation: 'Incluye cálculos automáticos, generación de reportes y conexión segura a SQL Server.'
     },
     {
@@ -92,6 +97,7 @@ export class Proyects {
       codeLinkFrontend: undefined,
       codeLinkBackend: undefined,
       videoId: 'oaCFtG-vEeg',
+      demoLabel: 'Descargar APK',
       explanation: 'Diseño adaptado para niños, actividades interactivas y almacenamiento de progreso.'
     },
     {
@@ -106,6 +112,7 @@ export class Proyects {
       codeLinkFrontend: undefined,
       codeLinkBackend: undefined,
       videoId: 'aoW7GGX_JT0',
+      demoLabel: 'Descargar script',
       explanation: 'Script con manejo de metadatos, detección de fechas y organización por carpetas.'
     },
     {
@@ -120,6 +127,7 @@ export class Proyects {
       codeLinkFrontend: undefined,
       codeLinkBackend: undefined,
       videoId: 'flfneFJYcAw',
+      demoLabel: 'Descargar script',
       explanation: 'Renombrado batch con expresiones regulares y soporte para múltiples formatos.'
     }
   ];
