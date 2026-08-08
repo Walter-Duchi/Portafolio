@@ -18,7 +18,6 @@ export class App implements OnInit {
   title = 'portfolio';
 
   ngOnInit(): void {
-    // Scroll reveal
     const reveals = document.querySelectorAll('.reveal');
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
@@ -26,10 +25,9 @@ export class App implements OnInit {
           entry.target.classList.add('active');
         }
       });
-    }, { threshold: 0.1, rootMargin: '0px 0px 300px 0px' });
+    }, { threshold: 0, rootMargin: '0px 0px 50px 0px' });
     reveals.forEach(el => observer.observe(el));
 
-    // Scroll to top button
     const scrollBtn = document.getElementById('scrollTopBtn');
     window.addEventListener('scroll', () => {
       if (window.scrollY > 500) {
@@ -37,12 +35,11 @@ export class App implements OnInit {
       } else {
         scrollBtn?.classList.remove('visible');
       }
-    });
+    }, { passive: true });
     scrollBtn?.addEventListener('click', () => {
       window.scrollTo({ top: 0, behavior: 'smooth' });
     });
 
-    // Modal visor (vídeos y certificados)
     const visorModal = document.getElementById('visorModal');
     const closeBtn = document.getElementById('modalCerrarBtn');
     closeBtn?.addEventListener('click', () => {

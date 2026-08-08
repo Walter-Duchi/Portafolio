@@ -1,4 +1,4 @@
-import { Component, inject, HostListener, ElementRef, Renderer2, OnInit } from '@angular/core';
+import { Component, inject, HostListener, ElementRef, Renderer2, OnInit, OnDestroy, AfterViewInit } from '@angular/core';
 import { ThemeService } from '../../services/theme';
 
 @Component({
@@ -6,17 +6,40 @@ import { ThemeService } from '../../services/theme';
   templateUrl: './navbar.html',
   styleUrl: './navbar.css',
 })
-export class Navbar implements OnInit {
+export class Navbar implements OnInit, OnDestroy, AfterViewInit {
   private themeService = inject(ThemeService);
   private el = inject(ElementRef);
   private renderer = inject(Renderer2);
   currentTheme = this.themeService.getThemeSignal();
   isMenuOpen = false;
+  private scrollTicking = false;
+  private scrollHandler: (() => void) | null = null;
 
   ngOnInit(): void {
+    this.scrollHandler = () => this.onScrollUpdate();
+    window.addEventListener('scroll', this.scrollHandler, { passive: true });
+  }
+
+  ngAfterViewInit(): void {
     this.handleScroll();
-    window.addEventListener('scroll', () => this.handleScroll());
-    this.setActiveLinkOnScroll();
+    this.updateActiveLink();
+  }
+
+  ngOnDestroy(): void {
+    if (this.scrollHandler) {
+      window.removeEventListener('scroll', this.scrollHandler);
+    }
+  }
+
+  private onScrollUpdate(): void {
+    if (!this.scrollTicking) {
+      requestAnimationFrame(() => {
+        this.handleScroll();
+        this.updateActiveLink();
+        this.scrollTicking = false;
+      });
+      this.scrollTicking = true;
+    }
   }
 
   toggleTheme(): void {
@@ -47,25 +70,41 @@ export class Navbar implements OnInit {
     }
   }
 
-  private setActiveLinkOnScroll(): void {
+  private updateActiveLink(): void {
     const sections = document.querySelectorAll('section[id]');
     const navLinks: NodeListOf<HTMLAnchorElement> = this.el.nativeElement.querySelectorAll('.nav-links a');
-    window.addEventListener('scroll', () => {
-      let current = '';
-      sections.forEach(section => {
-        const sectionTop = (section as HTMLElement).offsetTop - 120;
-        const sectionHeight = (section as HTMLElement).offsetHeight;
-        if (window.scrollY >= sectionTop && window.scrollY < sectionTop + sectionHeight) {
-          current = section.getAttribute('id') || '';
-        }
-      });
-      navLinks.forEach((link: HTMLAnchorElement) => {
-        link.classList.remove('active-link');
-        const href = link.getAttribute('href');
-        if (href && href === `#${current}`) {
-          link.classList.add('active-link');
-        }
-      });
+    const scrollY = window.scrollY;
+    const viewportHeight = window.innerHeight;
+    let current = '';
+    const offsetTopMargin = 100;
+
+    sections.forEach((section) => {
+      const rect = section.getBoundingClientRect();
+      const sectionTop = rect.top + scrollY;
+      const sectionHeight = rect.height;
+      if (scrollY + offsetTopMargin >= sectionTop && scrollY + offsetTopMargin < sectionTop + sectionHeight) {
+        current = section.getAttribute('id') || '';
+      }
+    });
+
+    if (!current && sections.length > 0) {
+      const lastSection = sections[sections.length - 1];
+      const lastRect = lastSection.getBoundingClientRect();
+      if (scrollY + viewportHeight >= document.body.scrollHeight - 10) {
+        current = lastSection.getAttribute('id') || '';
+      }
+    }
+
+    if (!current && sections.length > 0 && scrollY < 100) {
+      current = sections[0].getAttribute('id') || '';
+    }
+
+    navLinks.forEach((link: HTMLAnchorElement) => {
+      link.classList.remove('active-link');
+      const href = link.getAttribute('href');
+      if (href && href === `#${current}`) {
+        link.classList.add('active-link');
+      }
     });
   }
 
